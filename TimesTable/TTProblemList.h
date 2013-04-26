@@ -12,6 +12,8 @@
 
 @interface TTProblemList : NSObject
 
+@property (nonatomic, readonly, assign) int repeatCount;
+
 - (NSUInteger)count;
 - (TTProblem *)randomProblem;
 

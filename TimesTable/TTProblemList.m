@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *problemList;
 @property (nonatomic, strong) NSMutableArray *successfullyAnsweredProblems;
 @property (nonatomic, strong) TTProblem *currentProblem;
-@property (nonatomic, assign) int repeatCount;
+@property (nonatomic, readwrite, assign) int repeatCount;
 
 @end
 
@@ -30,8 +30,8 @@
         self.successfullyAnsweredProblems = [[NSMutableArray alloc] init];
         self.repeatCount = 0;
     
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < 2; j++) {
+        for (int i = 0; i < 13; i++) {
+            for (int j = 0; j < 13; j++) {
                 [self.problemList addObject:[[TTProblem alloc] initTopNumber:[NSNumber numberWithInt:i]     bottomNumber:[NSNumber numberWithInt:j]]];
             }
         }
@@ -47,7 +47,7 @@
     if (isCorrect) {
         return isCorrect;
     } else {
-        self.repeatCount = 2;
+        self.repeatCount = 7;
         return isCorrect;
     }
 

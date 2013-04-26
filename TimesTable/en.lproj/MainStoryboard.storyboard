@@ -129,6 +129,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F66-iI-9oW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="TeN-8Q-6xV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -140,13 +148,16 @@
                             <constraint firstItem="guD-HR-Nau" firstAttribute="leading" secondItem="eHx-Cz-Wdj" secondAttribute="leading" constant="52" id="Uwj-US-IeM"/>
                             <constraint firstItem="hbI-g5-3Rn" firstAttribute="top" secondItem="eHx-Cz-Wdj" secondAttribute="top" constant="-1" id="Xnw-WL-aWv"/>
                             <constraint firstItem="ULj-wz-n7c" firstAttribute="top" secondItem="eHx-Cz-Wdj" secondAttribute="top" constant="244" id="aKX-Wq-dvv"/>
+                            <constraint firstItem="F66-iI-9oW" firstAttribute="top" secondItem="eHx-Cz-Wdj" secondAttribute="top" constant="40" id="bFe-Jc-cXN"/>
                             <constraint firstItem="ULj-wz-n7c" firstAttribute="centerX" secondItem="eHx-Cz-Wdj" secondAttribute="centerX" type="default" id="cJM-8B-Hnl"/>
                             <constraint firstItem="6cT-gB-tcE" firstAttribute="top" secondItem="eHx-Cz-Wdj" secondAttribute="top" type="default" id="ctM-sg-3Za"/>
                             <constraint firstItem="DcO-2n-YTA" firstAttribute="leading" secondItem="eHx-Cz-Wdj" secondAttribute="leading" constant="105" id="eAX-G1-XJR"/>
                             <constraint firstItem="DcO-2n-YTA" firstAttribute="trailing" secondItem="KMg-km-QPm" secondAttribute="trailing" type="default" id="eKk-FS-e88"/>
+                            <constraint firstItem="F66-iI-9oW" firstAttribute="leading" secondItem="bB7-mI-UEn" secondAttribute="leading" type="default" id="osM-Mw-NHP"/>
                             <constraint firstItem="KMg-km-QPm" firstAttribute="bottom" secondItem="fnF-jG-hD3" secondAttribute="bottom" type="default" id="pjL-ds-LBQ"/>
                             <constraint firstAttribute="trailing" secondItem="guD-HR-Nau" secondAttribute="trailing" constant="80" id="rHl-XD-8gr"/>
                             <constraint firstItem="KMg-km-QPm" firstAttribute="leading" secondItem="hbI-g5-3Rn" secondAttribute="leading" type="default" id="rSC-jP-DGV"/>
+                            <constraint firstItem="F66-iI-9oW" firstAttribute="trailing" secondItem="bB7-mI-UEn" secondAttribute="trailing" type="default" id="sHc-ZF-XvK"/>
                             <constraint firstItem="DcO-2n-YTA" firstAttribute="top" secondItem="eHx-Cz-Wdj" secondAttribute="top" constant="152" id="tqi-Sr-pZe"/>
                             <constraint firstItem="bB7-mI-UEn" firstAttribute="leading" secondItem="6cT-gB-tcE" secondAttribute="leading" type="default" id="wtp-kf-PXY"/>
                             <constraint firstAttribute="bottom" secondItem="guD-HR-Nau" secondAttribute="bottom" constant="356" id="xJd-MI-vOk"/>
@@ -161,6 +172,7 @@
                         <outlet property="completedLabel" destination="6cT-gB-tcE" id="Ctl-14-PDW"/>
                         <outlet property="doneButton" destination="ULj-wz-n7c" id="LCB-1S-zrM"/>
                         <outlet property="remainingLabel" destination="bB7-mI-UEn" id="qgJ-vQ-WRJ"/>
+                        <outlet property="repeatLabel" destination="F66-iI-9oW" id="ynk-jy-EQo"/>
                         <outlet property="topNumber" destination="hbI-g5-3Rn" id="uYu-hG-ZTt"/>
                     </connections>
                 </viewController>
@@ -169,6 +181,28 @@
             <point key="canvasLocation" x="880" y="64"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TTGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneClicked:"/>
+                <relationship kind="outlet" name="answer" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="answerTextView" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bottomNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="completedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="remainingLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="repeatLabel" candidateClass="UIView"/>
+                <relationship kind="outlet" name="topNumber" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TTMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TTMainViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

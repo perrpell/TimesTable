@@ -37,18 +37,17 @@
     self.bottomNumber.text = [self.currentProblem.bottomNumber stringValue];
     
     [self updateCompletedLabel];
-    [self updateRemainingLabel];
 }
 
 - (void)updateCompletedLabel
 {
     self.remainingLabel.text = [NSString stringWithFormat:@"remaining: %d", [self.problemList count]];
-    self.completedLabel.text = [NSString stringWithFormat:@"copleted: %d", [self.problemList successfullyAnsweredCount] ];
-}
-
-- (void)updateRemainingLabel
-{
-    
+    self.completedLabel.text = [NSString stringWithFormat:@"completed: %d", [self.problemList successfullyAnsweredCount] ];
+    if (self.problemList.repeatCount != 0) {
+        self.repeatLabel.text = [NSString stringWithFormat:@"review count: %d", [self.problemList repeatCount] ];
+    } else {
+        self.repeatLabel.text = @"";
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,7 +66,7 @@
     if ([self.problemList isAnswerCorrectForCurrentProblem:enteredAnswer]) {
         [self.answerTextView setTextColor:[UIColor greenColor]];
         [self.problemList answeredSuccessfully:self.currentProblem];
-        self.timer = [NSTimer timerWithTimeInterval:1
+        self.timer = [NSTimer timerWithTimeInterval:0.5
                                              target:self
                                            selector:@selector(changeProblem)
                                            userInfo:nil
@@ -98,7 +97,6 @@
     self.timer = nil;
     
     [self updateCompletedLabel];
-    [self updateRemainingLabel];
     
     self.currentProblem = [self.problemList randomProblem];
     
@@ -106,6 +104,11 @@
     self.bottomNumber.text = [self.currentProblem.bottomNumber stringValue];
     [self.answerTextView setTextColor:[UIColor blackColor]];
     self.answerTextView.text = @"";
+}
+
+- (void)updateRepeatLabel
+{
+    
 }
 
 @end

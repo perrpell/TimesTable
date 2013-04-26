@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *bottomNumber;
 
+
 @property (weak, nonatomic) IBOutlet UILabel *answer;
 
 @property (weak, nonatomic) IBOutlet UITextField *answerTextView;
@@ -23,5 +24,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *completedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *remainingLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *repeatLabel;
 
 @end
