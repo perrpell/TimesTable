@@ -64,7 +64,7 @@
 - (IBAction)doneClicked:(id)sender {
     NSNumber *enteredAnswer = [NSNumber numberWithInt:[self.answerTextView.text intValue]];
     
-    if ([self.currentProblem answerIsCorrect:enteredAnswer]) {
+    if ([self.problemList isAnswerCorrectForCurrentProblem:enteredAnswer]) {
         [self.answerTextView setTextColor:[UIColor greenColor]];
         [self.problemList answeredSuccessfully:self.currentProblem];
         self.timer = [NSTimer timerWithTimeInterval:1
@@ -101,6 +101,7 @@
     [self updateRemainingLabel];
     
     self.currentProblem = [self.problemList randomProblem];
+    
     self.topNumber.text = [self.currentProblem.topNumber stringValue];
     self.bottomNumber.text = [self.currentProblem.bottomNumber stringValue];
     [self.answerTextView setTextColor:[UIColor blackColor]];

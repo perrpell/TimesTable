@@ -41,8 +41,34 @@
     [list answeredSuccessfully:problem];
     STAssertEquals((NSUInteger)168, [list count], @"wrong");
     STAssertEquals((NSUInteger)1, [list successfullyAnsweredCount], @"wrong");
+}
+
+- (void)testIncorrectAnswerPutsListInRepeatMode
+{
+    TTProblemList *list = [[TTProblemList alloc] init];
+    TTProblem *problem = [list randomProblem];
     
+    int wrongAnswer = [problem.answer intValue] + 3;
     
+    STAssertFalse([list isAnswerCorrectForCurrentProblem:[NSNumber numberWithInt:wrongAnswer]], @"wrong");
+    
+    TTProblem *shouldBeSameProblem = [list randomProblem];
+    STAssertEqualObjects(problem, shouldBeSameProblem, @"wrong");
+    
+    shouldBeSameProblem = [list randomProblem];
+    STAssertEqualObjects(problem, shouldBeSameProblem, @"wrong");
+    
+    shouldBeSameProblem = [list randomProblem];
+    STAssertEqualObjects(problem, shouldBeSameProblem, @"wrong");
+    
+    shouldBeSameProblem = [list randomProblem];
+    STAssertEqualObjects(problem, shouldBeSameProblem, @"wrong");
+    
+    shouldBeSameProblem = [list randomProblem];
+    STAssertEqualObjects(problem, shouldBeSameProblem, @"wrong");
+    
+    TTProblem *shouldBeDifferentProblem = [list randomProblem];
+    STAssertFalse(problem == shouldBeDifferentProblem, @"wrong");
 }
 
 @end

@@ -17,5 +17,6 @@
 
 - (void)answeredSuccessfully:(TTProblem *)problem;
 - (NSUInteger)successfullyAnsweredCount;
+- (BOOL)isAnswerCorrectForCurrentProblem:(NSNumber *)enteredAnswer;
 
 @end

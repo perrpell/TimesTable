@@ -48,4 +48,9 @@
     return self.incorrectCount;
 }
 
+- (NSNumber *)answer
+{
+    return [NSNumber numberWithInt:[self.topNumber intValue] * [self.bottomNumber intValue]];
+}
+
 @end

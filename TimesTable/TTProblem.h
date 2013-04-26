@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSNumber *topNumber;
 @property (nonatomic, strong) NSNumber *bottomNumber;
+@property (nonatomic, readonly) NSNumber *answer;
 
 - (id)initTopNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber;
 
