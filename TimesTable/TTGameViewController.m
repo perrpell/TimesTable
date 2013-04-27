@@ -73,6 +73,8 @@
                                             repeats:NO];
     } else {
         [self.answerTextView setTextColor:[UIColor redColor]];
+        self.answerTextView.text = [self.currentProblem.answer stringValue];
+        
         self.timer = [NSTimer timerWithTimeInterval:2
                                              target:self
                                            selector:@selector(changeProblem)
